@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chatroom</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="bg-info size ">
+        <div class="text-end">
+                <button class="glyphicon glyphicon-log-out btn btn-danger" onclick="logout()">log out </button>
+        </div>
+            <p class="text-light">online</p>
+            <div id="data" class="bg-body-secondary border border-light-subtle rounded-pill text-start">
+                
+            </div>
+            <div class="space"></div>
+            <div class="d-flex flex-row ">
+                <input id="msg" placeholder="message" type="text" class="form-control"  />
+                <button class="btn btn-primary" onclick="send()">send</button>
+
+            </div>
+    </div>
+</body>
+</html>
+<style>
+    .size{
+        height: 100vh;
+    }
+    .space{
+        height: 20vh;
+    }
+</style>
+<script>
+    function logout(){
+        window.location="index.html";
+    };
+
+    function send(){
+        let data=document.getElementById("data");
+        let para=document.createElement("p");
+        para.className="ms-5"
+        para.textContent= document.getElementById("msg").value;
+
+        data.appendChild(para)
+        document.getElementById("msg").value="";
+
+        
+
+       
+
+
+    }
+
+
+</script>
